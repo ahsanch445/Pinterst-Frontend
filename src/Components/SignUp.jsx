@@ -31,7 +31,7 @@ const SignUp = () => {
      let response =  await axios.post("https://pinterst-api.vercel.app/users",form,{
       withCredentials:true
      })
-
+  
      if(response.data.email){
      
       localStorage.setItem("form", JSON.stringify(response.data));
