@@ -3,7 +3,7 @@ import "../style/signUp.css"
 import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { userContext } from '../context/Context-api'
-
+import Cookie from "js-cookie"
 const Login = () => {
   const {setisAuth,userAuth,isAuth} = useContext(userContext)
   let naigate = useNavigate()
@@ -31,6 +31,8 @@ setform({
     try {
       let response = await axios.post("https://pinterst-api.vercel.app/users/login",form)
    if( response.data.massage == "user is login"){
+    const token = response.data.token
+    Cookie.set("token",token ,{ path: '/', expires: 1 })
     console.log(response.data)
     setisAuth(!isAuth)
     naigate("/")
