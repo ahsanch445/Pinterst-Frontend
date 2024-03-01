@@ -17,7 +17,12 @@ const UserProvider = ({children})=>{
       const getUser =async ()=>{
         
        try {
-        let res =  await axios.get("https://pinterst-api.vercel.app/users/login")
+        let res =  await axios.get("https://pinterst-api.vercel.app/users/login",{
+          headers:{
+            "Content-Type":"application/json",
+          },
+          withCredentials:true
+        })
        console.log(res.data)
        if(res.data.user.email){
         setisAuth(true)
