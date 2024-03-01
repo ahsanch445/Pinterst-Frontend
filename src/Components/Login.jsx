@@ -29,7 +29,15 @@ setform({
   }
   const handalClick = async()=>{
     try {
-      let response = await axios.post("https://pinterst-api.vercel.app/users/login",form)
+      let response = await axios.post("https://pinterst-api.vercel.app/users/login",form,{
+
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    
+      })
    if( response.data.massage == "user is login"){
     const token = response.data.token
     Cookie.set("token",token ,{ path: '/', expires: 1 })
