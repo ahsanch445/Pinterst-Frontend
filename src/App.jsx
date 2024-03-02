@@ -20,6 +20,7 @@ useEffect(() => {
 if(token){
   setisAuth(true)
 }
+setisAuth(!isAuth)
  
 }, [])
 
