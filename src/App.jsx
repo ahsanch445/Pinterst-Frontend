@@ -36,7 +36,8 @@ if(token){
                 <Route path="/create" element={<Upload />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/ProfileUpdate" element={<ProfileUpdate />} />
-
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/login" element={<Login />} />
 
                 
               </>
