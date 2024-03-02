@@ -23,23 +23,32 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+       {
+
+        isAuth||token?<>
+         <Route path="/" element={<Home />} />
         <Route path="/create" element={<Upload />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/ProfileUpdate" element={<ProfileUpdate />} />
+        
+        </>:
+       
 
-        {/* Routes for unauthenticated users */}
-        <Route
+      <>
+      
+       
+      <Route
           path="/signup"
-          element={isAuth&&token ? <Navigate to="/" /> : <SignUp />}
+          element={isAuth||token ? <Navigate to="/" /> : <SignUp />}
         />
         <Route
           path="/login"
-          element={isAuth&&token  ? <Navigate to="/" /> : <Login />}
+          element={isAuth||token  ? <Navigate to="/" /> : <Login />}
         />
 
-        {/* Default route (not found) */}
+      </>
        
+}
       </Routes>
     </Router>
   );
