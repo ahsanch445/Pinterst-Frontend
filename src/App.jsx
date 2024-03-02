@@ -46,8 +46,7 @@ if(token){
 
          <Route path="/" element={<Navigate to="/signup" />} />
 
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/login" element={<Login />} />
+          
 
               </>
 
@@ -56,41 +55,8 @@ if(token){
             
             
             }
-{ 
-          
-            !isAuth && !token ?
-              <>
-
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/login" element={<Login />} />
-              </>
-              : <>
-
-
-
-
-
-
-
-              </>
-
-
-
-
-
-          }
-          // {
-
-          //   isAuth && userAuth.email ? <>
-          //    <Route path='/' element={<Navigate to="/signup" />} />
-          //   </>
-          //     : <Route path='/' element={<Navigate to="/signup" />} />
-
-
-           //} 
-           }
-        </>
-
+ 
+           </> 
 
 
       </Routes>
