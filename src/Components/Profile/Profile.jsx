@@ -8,7 +8,7 @@ import Pins from './myboards/Pins'
 
 axios.defaults.withCredentials = true
 const Profile = () => {
-  const {userAuth} = useContext(userContext)
+  const {userAuth ,isAuth, setisAuth} = useContext(userContext)
 
   useEffect(() => {
     setisAuth(!isAuth)
