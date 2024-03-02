@@ -10,10 +10,6 @@ axios.defaults.withCredentials = true
 const Profile = () => {
   const {userAuth ,isAuth, setisAuth} = useContext(userContext)
 
-  useEffect(() => {
-    setisAuth(!isAuth)
-     
-   }, [])
   
   
   return (

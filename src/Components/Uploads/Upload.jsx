@@ -13,10 +13,7 @@ const Upload = () => {
   const [title, setTitle] = useState("");
   const [loader, setloader] = useState(true)
   const [dis, setDis] = useState("");
-  useEffect(() => {
-    setisAuth(!isAuth)
-     
-   }, [])
+  
   
      const handalFiles = (e)=>{
       setpost(e.target.files[0])

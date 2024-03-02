@@ -7,10 +7,7 @@ import { userContext } from '../../context/Context-api';
 
 const ProfileUpdate = () => {
   const {userAuth,setUpdateAuth ,isAuth,setisAuth} = useContext(userContext)
-  useEffect(() => {
-    setisAuth(!isAuth)
-     
-   }, [])
+ 
   const [pic, setPic] = useState(null);
   const storedUserAuth = JSON.parse(localStorage.getItem('form')) || {};
 
