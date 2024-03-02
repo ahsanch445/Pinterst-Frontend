@@ -52,10 +52,13 @@ if(token){
               </>
 
 
-            )}
-{/* 
-          {
-            isAuth && isAuth ?
+            )
+            
+            
+            }
+{ 
+          
+            !isAuth && !token ?
               <>
 
                 <Route path="/signup" element={<SignUp />} />
@@ -76,15 +79,16 @@ if(token){
 
 
           }
-          {
+          // {
 
-            isAuth && userAuth.email ? <>
-             <Route path='/' element={<Navigate to="/signup" />} />
-            </>
-              : <Route path='/' element={<Navigate to="/signup" />} />
+          //   isAuth && userAuth.email ? <>
+          //    <Route path='/' element={<Navigate to="/signup" />} />
+          //   </>
+          //     : <Route path='/' element={<Navigate to="/signup" />} />
 
 
-          } */}
+           //} 
+           }
         </>
 
 
