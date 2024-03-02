@@ -30,7 +30,7 @@ height: 4vw;
 .ahsan{
     border: 1px rgb(156, 153, 153) solid;
 }
-  /* Change the outline color on focus */
+  /* Change the outline color on ocus */
 .ahsan:focus {
     outline: 2px solid rgb(124, 179, 216); /* Replace #ff0000 with the desired color code */
   }
