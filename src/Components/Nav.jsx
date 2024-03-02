@@ -15,7 +15,7 @@ const Nav = ({setSearch}) => {
 try {
   let res = await axios.post("https://pinterst-api.vercel.app/users/logout")
 if(res.data.message = "user is logout success fully"){
-  // localStorage.removeItem("token1")
+  localStorage.removeItem("token1")
   Cookies.remove("token")
   setisAuth(!isAuth);
 
