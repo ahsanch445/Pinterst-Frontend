@@ -9,61 +9,37 @@ import Profile from './Components/Profile/Profile';
 import { useContext } from 'react';
 import { userContext } from './context/Context-api';
 import Cookies from 'js-cookie';
-function App() {
-  const { isAuth,setisAuth ,userAuth } = useContext(userContext);
-  let cok= Cookies.get("token")
-  console.log("coookie",cok)
-// const  token = localStorage.getItem("token1") 
 
-const token = Cookies.get("token")
-useEffect(() => {
-if(token){
-  setisAuth(true)
-}
- 
-}, [])
+function App() {
+  const { isAuth, setisAuth, userAuth } = useContext(userContext);
+  const token = Cookies.get("token");
+
+  useEffect(() => {
+    if (token) {
+      setisAuth(true);
+    }
+  }, [token, setisAuth]);
 
   return (
     <Router>
       <Routes>
-        <>
-          {
+        <Route path="/" element={<Home />} />
+        <Route path="/create" element={<Upload />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/ProfileUpdate" element={<ProfileUpdate />} />
 
+        {/* Routes for unauthenticated users */}
+        <Route
+          path="/signup"
+          element={isAuth ? <Navigate to="/" /> : <SignUp />}
+        />
+        <Route
+          path="/login"
+          element={isAuth ? <Navigate to="/" /> : <Login />}
+        />
 
-        isAuth||  token  ? (
-              <>
-                <Route path="/" element={<Home />} />
-                <Route path="/create" element={<Upload />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/ProfileUpdate" element={<ProfileUpdate />} />
-             
-       
-
-                
-              </>
-            ) : (
-              <>
-
-<Route path="/signup" element={<SignUp />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/" element={< Login />} />
-         {/* <Route path="/" element={<SignUp />} /> */}
-     
-        
-       
-          
-
-              </>
-
-
-            )
-            
-            
-            }
- 
-           </> 
-
-
+        {/* Default route (not found) */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
