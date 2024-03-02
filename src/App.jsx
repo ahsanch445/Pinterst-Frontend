@@ -9,57 +9,60 @@ import Profile from './Components/Profile/Profile';
 import { useContext } from 'react';
 import { userContext } from './context/Context-api';
 import Cookies from 'js-cookie';
-
 function App() {
-  const { isAuth, setisAuth, userAuth } = useContext(userContext);
-  const token = Cookies.get("token");
+  const { isAuth,setisAuth ,userAuth } = useContext(userContext);
+  let cok= Cookies.get("token")
+  console.log("coookie",cok)
+// const  token = localStorage.getItem("token1") 
 
-  useEffect(() => {
-    if (token) {
-      setisAuth(true);
-    }
-  }, [token, setisAuth]);
+const token = Cookies.get("token")
+useEffect(() => {
+if(token){
+  setisAuth(true)
+}
+ 
+}, [])
 
   return (
     <Router>
       <Routes>
-       {
+        <>
+          {
 
-        isAuth||token?<>
-         <Route path="/" element={<Home />} />
-        <Route path="/create" element={<Upload />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/ProfileUpdate" element={<ProfileUpdate />} />
-        
-        </>:
-       <>
-       ""
-       </>
 
-   
-
+        isAuth||  token  ? (
+              <>
+                <Route path="/" element={<Home />} />
+                <Route path="/create" element={<Upload />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/ProfileUpdate" element={<ProfileUpdate />} />
+             
        
-}
-{
-  !isAuth &&!token?
-  
-  
-  <>
-  
-  
-  <Route
-          path="/signup"
-          element={isAuth||token ? <Navigate to="/" /> : <SignUp />}
-        />
-        <Route
-          path="/login"
-          element={isAuth||token  ? <Navigate to="/" /> : <Login />}
-        />
-  </>
-  :<>""</>
-}
+
+                
+              </>
+            ) : (
+              <>
+
+<Route path="/signup" element={<SignUp />} />
+                <Route path="/login" element={<Login />} />
+                  <Route path="/" element={<SignUp />} />
+       
+     
+        
+         <Route path="/" element={< Login />} />
+       
+          
+
+              </>
 
 
+            )
+            
+            
+            }
+ 
+           </> 
 
 
       </Routes>
