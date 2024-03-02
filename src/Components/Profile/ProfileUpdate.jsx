@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState,useEffect } from 'react';
 import Nav from '../Nav';
 import Footer from './Footer';
 import axios from 'axios';
@@ -6,8 +6,11 @@ import axios from 'axios';
 import { userContext } from '../../context/Context-api';
 
 const ProfileUpdate = () => {
-  const {userAuth,setUpdateAuth} = useContext(userContext)
-
+  const {userAuth,setUpdateAuth ,isAuth,setisAuth} = useContext(userContext)
+  useEffect(() => {
+    setisAuth(!isAuth)
+     
+   }, [])
   const [pic, setPic] = useState(null);
   const storedUserAuth = JSON.parse(localStorage.getItem('form')) || {};
 

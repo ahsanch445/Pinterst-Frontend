@@ -6,6 +6,11 @@ import { userContext } from '../context/Context-api'
 import Cookie from "js-cookie"
 const Login = () => {
   const {setisAuth,userAuth,isAuth} = useContext(userContext)
+  useEffect(() => {
+   setisAuth(!isAuth)
+    
+  }, [])
+  
   let naigate = useNavigate()
   const [ShowError, setShowError] = useState()
   const [form, setform] = useState({

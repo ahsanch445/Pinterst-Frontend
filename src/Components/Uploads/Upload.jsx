@@ -1,17 +1,22 @@
-import React, { useState } from 'react'
+import React, { useContext, useState,useEffect } from 'react'
 import Nav from '../Nav'
 
 import { FaArrowUp } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
 import axios from 'axios';
 import ImageUploader from '../loader/ImageUploader';
+import { userContext } from '../../context/Context-api';
 const Upload = () => {
+  const {isAuth,setisAuth}= useContext(userContext) 
   const [post, setpost] = useState()
   const [uploadProgress, setUploadProgress] = useState(0);
   const [title, setTitle] = useState("");
   const [loader, setloader] = useState(true)
   const [dis, setDis] = useState("");
-
+  useEffect(() => {
+    setisAuth(!isAuth)
+     
+   }, [])
   
      const handalFiles = (e)=>{
       setpost(e.target.files[0])
