@@ -27,7 +27,6 @@ if(token){
     <Router>
       <Routes>
         <>
-        <Route path="/login" element={<Login />} />
           {
 
 
@@ -38,20 +37,19 @@ if(token){
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/ProfileUpdate" element={<ProfileUpdate />} />
              
-         <Route path="/" element={<SignUp />} />
-         <Route path='/login' element={<Navigate to="/login" />} />
+       
+
                 
               </>
             ) : (
               <>
-   <Route path="/login" element={<Login />} />
+
 <Route path="/signup" element={<SignUp />} />
-            
-<Route path='/login' element={<Navigate to="/login" />} />
+                <Route path="/login" element={<Login />} />
+       
          <Route path="/" element={<SignUp />} />
-         <Route path="/login" element={<Home />} />
         
-   
+       
           
 
               </>
