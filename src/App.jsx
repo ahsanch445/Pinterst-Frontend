@@ -11,9 +11,8 @@ import { userContext } from './context/Context-api';
 import Cookies from 'js-cookie';
 function App() {
   const { isAuth,setisAuth ,userAuth } = useContext(userContext);
-  let cok= Cookies.get()
-  console.log("coookie",cok)
-const  token = localStorage.getItem("token1") 
+
+const  token = Cookies.get("token")
 
 useEffect(() => {
 if(token){

@@ -5,21 +5,24 @@ import axios from 'axios'
 import { RiArrowDropDownLine } from "react-icons/ri";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Cookies from 'js-cookie';
 const Nav = ({setSearch}) => {
   const {userAuth,setisAuth,isAuth} = useContext(userContext)
   const token = localStorage.getItem("token1")
   let navigate = useNavigate()
   const handalLogout = async ()=>{
+    
 try {
   let res = await axios.post("https://pinterst-api.vercel.app/users/logout")
 if(res.data.message = "user is logout success fully"){
-  
- 
-}
-localStorage.removeItem("token1")
+  // localStorage.removeItem("token1")
+  Cookies.remove("token")
   setisAuth(!isAuth);
 
     navigate("/login")
+ 
+}
+
 } catch (error) {
   console.error({message:"you have a error in logout route" },error)
 }

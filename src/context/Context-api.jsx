@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 import React, { createContext,useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -15,11 +16,12 @@ const UserProvider = ({children})=>{
     useEffect(() => {
      
       const getUser =async ()=>{
-        
+        const cookie = Cookies.get("token")
        try {
         let res =  await axios.get("https://pinterst-api.vercel.app/users/login",{
           headers:{
             "Content-Type":"application/json",
+            "Authorization":`Bearer ${cookie}`
           },
           withCredentials:true
         })
