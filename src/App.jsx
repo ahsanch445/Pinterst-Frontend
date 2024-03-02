@@ -46,7 +46,7 @@ if(token){
 
 <Route path="/signup" element={<SignUp />} />
                 <Route path="/login" element={<Login />} />
-         <Route path="/" element={<SignUp />} />
+         <Route path="/signup" element={<SignUp />} />
          <Route path="/" element={<SignUp />} />
          <Route path="/login" element={<SignUp />} />
                 
