@@ -11,11 +11,18 @@ const Nav = ({setSearch}) => {
   const token = localStorage.getItem("token1")
   let navigate = useNavigate()
   const handalLogout = async ()=>{
-    
+    const cookie = Cookies.get("token")
 try {
-  let res = await axios.post("https://pinterst-api.vercel.app/users/logout")
+  let res = await axios.post("https://pinterst-api.vercel.app/users/logout",{
+    
+  },{
+    headers:{
+      "Content-Type":"application/json",
+      "Authorization":  `Bearer ${cookie}` 
+    },
+  })
 if(res.data.message = "user is logout success fully"){
-  localStorage.removeItem("token1")
+  // localStorage.removeItem("token1")
   Cookies.remove("token")
   setisAuth(!isAuth);
 
