@@ -32,12 +32,22 @@ function App() {
         <Route path="/ProfileUpdate" element={<ProfileUpdate />} />
         
         </>:
-       
+       <>
+       ""
+       </>
 
-      <>
-      
+   
+
        
-      <Route
+}
+{
+  !isAuth &&!token?
+  
+  
+  <>
+  
+  
+  <Route
           path="/signup"
           element={isAuth||token ? <Navigate to="/" /> : <SignUp />}
         />
@@ -45,10 +55,13 @@ function App() {
           path="/login"
           element={isAuth||token  ? <Navigate to="/" /> : <Login />}
         />
-
-      </>
-       
+  </>
+  :<>""</>
 }
+
+
+
+
       </Routes>
     </Router>
   );
