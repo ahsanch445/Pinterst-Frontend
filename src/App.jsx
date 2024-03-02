@@ -31,15 +31,15 @@ function App() {
         {/* Routes for unauthenticated users */}
         <Route
           path="/signup"
-          element={isAuth ? <Navigate to="/" /> : <SignUp />}
+          element={isAuth&&token ? <Navigate to="/" /> : <SignUp />}
         />
         <Route
           path="/login"
-          element={isAuth ? <Navigate to="/" /> : <Login />}
+          element={isAuth&&token  ? <Navigate to="/" /> : <Login />}
         />
 
         {/* Default route (not found) */}
-        <Route path="*" element={<Navigate to="/" />} />
+       
       </Routes>
     </Router>
   );
