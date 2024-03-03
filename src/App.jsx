@@ -20,12 +20,12 @@ useEffect(() => {
 if(token){
   setisAuth(true)
 }
-setisAuth(!isAuth)
+
  
 }, [])
 
   return (
-    <Router basename='/'>
+    <Router >
       <Routes>
         <>
           {
