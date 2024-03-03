@@ -15,7 +15,7 @@ const Upload = () => {
   const [loader, setloader] = useState(true)
   const [dis, setDis] = useState("");
   
-  const cookie =Cookies("token") 
+  const cookie =Cookies.get("token") 
      const handalFiles = (e)=>{
       setpost(e.target.files[0])
 
