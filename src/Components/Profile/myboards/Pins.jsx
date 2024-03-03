@@ -4,7 +4,7 @@ import { userContext } from '../../../context/Context-api'
 
 const Pins = () => {
 const {isAuth,setisAuth ,userAuth}= useContext(userContext)
-    console.log(userAuth.posts.post)
+    console.log(userAuth.posts)
     const  [istrue, setIstrue] = useState(false)
     const handalClick = ()=>{
 
