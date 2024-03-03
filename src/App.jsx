@@ -25,7 +25,7 @@ setisAuth(!isAuth)
 }, [])
 
   return (
-    <Router>
+    <Router basename='/'>
       <Routes>
         <>
           {
