@@ -10,7 +10,6 @@ const UserProvider = ({children})=>{
     const [UpdateAuth, setUpdateAuth] = useState({})
     const [isAuth, setisAuth] = useState(false)
  
- console.log(userAuth)
 
 
     useEffect(() => {
