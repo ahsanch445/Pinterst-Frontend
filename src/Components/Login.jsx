@@ -64,7 +64,7 @@ setform({
         <p className="header">Log in to see more</p>
 <p className='mt-[1vw] text-red-600'>{ShowError}</p>
         
-        <input name='email' onChange={handalLogin} type="email" placeholder="UserName" className=" h-[5vw] mt-[1vw] detail" /><br />
+        <input name='email' onChange={handalLogin} type="email" placeholder="Email" className=" h-[5vw] mt-[1vw] detail" /><br />
 
         <input name='password' onChange={handalLogin} type="password" placeholder="Password" className="h-[5vw] mt-[2vw] detail" />
 
