@@ -42,7 +42,7 @@ setform({
    if( response.data.massage == "user is login"){
     const token = response.data.token
     Cookie.set("token",token ,{ path: '/', expires: 1 })
-    console.log(response.data)
+
     setisAuth(!isAuth)
     naigate("/")
   

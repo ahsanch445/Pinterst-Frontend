@@ -25,7 +25,7 @@ const UserProvider = ({children})=>{
           },
           withCredentials:true
         })
-       console.log(res.data)
+    
        if(res.data.user.email){
         setisAuth(true)
        }
