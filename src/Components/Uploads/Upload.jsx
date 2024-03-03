@@ -6,6 +6,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import axios from 'axios';
 import ImageUploader from '../loader/ImageUploader';
 import { userContext } from '../../context/Context-api';
+import Cookies from 'js-cookie';
 const Upload = () => {
   const {isAuth,setisAuth}= useContext(userContext) 
   const [post, setpost] = useState()
@@ -14,7 +15,7 @@ const Upload = () => {
   const [loader, setloader] = useState(true)
   const [dis, setDis] = useState("");
   
-  
+  const cookie =Cookies("token") 
      const handalFiles = (e)=>{
       setpost(e.target.files[0])
 
@@ -43,6 +44,9 @@ const Upload = () => {
           const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
           setUploadProgress(percentCompleted);
         },
+        headers:{
+        "Authorization":`Bearer ${cookie}`
+        }
 
         });
         if (res.status === 200) {
