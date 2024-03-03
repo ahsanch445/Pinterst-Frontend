@@ -4,10 +4,10 @@ import { userContext } from '../../../context/Context-api'
 
 const Pins = () => {
 const {isAuth,setisAuth ,userAuth}= useContext(userContext)
-    
+    console.log(userAuth.posts.post)
     const  [istrue, setIstrue] = useState(false)
     const handalClick = ()=>{
-setIstrue(!istrue)
+
 setisAuth(!isAuth)
     }
    

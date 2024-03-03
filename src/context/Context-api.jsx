@@ -11,7 +11,7 @@ const UserProvider = ({children})=>{
     const [isAuth, setisAuth] = useState(false)
  
 
-
+console.log(userAuth)
     useEffect(() => {
      
       const getUser =async ()=>{
