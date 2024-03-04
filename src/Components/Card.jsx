@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Card = (data) => {
-console.log(data)
+
   return (
     <div>
    
@@ -18,7 +18,7 @@ console.log(data)
         {
           data.data.title&&data.data.description?<img className=' rounded-full w-[3vw]  h-[3vw] object-cover ' src={data.data.user.image} alt="" />:""
         }
-        <h2 style={{fontFamily:"arial", opacity:"0.8"}} className='text-[1.4vw] tracking-tight'>{data.user.username
+        <h2 style={{fontFamily:"arial", opacity:"0.8"}} className='text-[1.4vw] tracking-tight'>{data.data.user.username
 }</h2>
        </div>
         </div>
