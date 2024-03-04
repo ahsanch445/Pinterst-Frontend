@@ -16,7 +16,7 @@ console.log(data)
        <div className='flex items-center gap-1 p-2'>
 
         {
-          data.data.title&&data.data.description?<img className=' rounded-full w-[3vw]  h-[3vw] object-cover ' src={data.data.user.image} alt="" />:""
+          data.data.title&&data.data?<img className=' rounded-full w-[3vw]  h-[3vw] object-cover ' src={data.data.user.image} alt="dp" />:""
         }
         <h2 style={{fontFamily:"arial", opacity:"0.8"}} className='text-[1.4vw] tracking-tight'>{data.data.user.username
 }</h2>
