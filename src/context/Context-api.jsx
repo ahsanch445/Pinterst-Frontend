@@ -38,7 +38,7 @@ const UserProvider = ({children})=>{
        }
       }
       
- isAuth&& getUser()
+ getUser()
         }, [UpdateAuth,isAuth])
 
 const token = localStorage.getItem("token1")
